@@ -7,4 +7,4 @@ jobs:
     steps:
       - checkout
       - run:
-          command: nosetests test/test.py
+          command: python test/test.py
