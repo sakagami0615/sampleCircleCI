@@ -14,3 +14,7 @@ class MathTest(unittest.TestCase):
 		#expected = 8 # 実行結果と一致
 		expected = 7 # 実行結果と一致
 		self.assertEqual(actual, expected)
+
+
+if __name__ == '__main__':
+    unittest.main()
