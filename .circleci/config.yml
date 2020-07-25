@@ -20,7 +20,7 @@ jobs:
       - run:
           name: Coverage verification
           command: |
-            coverage run --source='src'
+            coverage run test/test.py
             codecov
           when: always
 
