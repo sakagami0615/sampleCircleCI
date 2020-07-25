@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+  codecov: codecov/codecov@1.1.1
 jobs:
   build:
     working_directoyr: ~/sampleCircleCI
@@ -6,9 +8,9 @@ jobs:
       - image: circleci/python:3
     steps:
       - checkout
-      - run:
-          pip install --upgrade pip
-      - run:
-          command: pip install -r requirements.txt
-      - run:
-          command: nosetests test/test.py
+      - run: pip install --upgrade pip
+      - run: pip install -r requirements.txt
+      - run: nosetests test/test.py
+      - run: flake8 ./ src
+      - codecov/upload:
+          file: ./coverage.out

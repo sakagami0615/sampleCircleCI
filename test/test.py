@@ -1,19 +1,27 @@
-# -*- coding: utf-8 -*-
-
 import os
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 import unittest
-from src.myadd import addition
+from src.saturation import saturation
 
 
 class MathTest(unittest.TestCase):
-	def test_addition(self):
-		actual = addition(3,4)
-		#expected = 8 # 実行結果と一致
-		expected = 7 # 実行結果と一致
-		self.assertEqual(actual, expected)
+	
+	def test_saturation(self):
+		test_datas = [
+			{'value':1, 'high':10, 'low':5, 'expect': 5},
+			{'value':7, 'high':10, 'low':5, 'expect': 7},
+			{'value':15, 'high':10, 'low':5, 'expect': 10}
+		]
+		
+		for data in test_datas:
+			actual = saturation(data['value'], data['high'], data['low'])
+			self.assertEqual(actual, data['expect'])
+
+		#import subprocess
+		#subprocess.call('coverage report -m', shell=True)
+		#subprocess.call('flake8 src', shell=True)
 
 
 if __name__ == '__main__':
