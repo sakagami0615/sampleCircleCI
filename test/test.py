@@ -14,15 +14,6 @@ class MathTest(unittest.TestCase):
 			{'value':7, 'high':10, 'low':5, 'expect': 7},
 			{'value':15, 'high':10, 'low':5, 'expect': 10}
 		]
-		
 		for data in test_datas:
 			actual = saturation(data['value'], data['high'], data['low'])
 			self.assertEqual(actual, data['expect'])
-
-		#import subprocess
-		#subprocess.call('coverage report -m', shell=True)
-		#subprocess.call('flake8 src', shell=True)
-
-
-if __name__ == '__main__':
-    unittest.main()

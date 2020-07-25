@@ -1,4 +1,6 @@
 nose
+coverage
+codecov
 flake8
 autopep8
 numpy
