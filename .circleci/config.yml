@@ -3,7 +3,7 @@ orbs:
   codecov: codecov/codecov@1.1.1
 jobs:
   build:
-    working_directoyr: ~/sampleCircleCI
+    working_directoy: ~/sampleCircleCI
     docker:
       - image: circleci/python:3
     steps:
