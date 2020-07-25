@@ -1,8 +1,9 @@
-from src.saturation import saturation
 import unittest
 import os
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from src.saturation import saturation
 
 
 class MathTest(unittest.TestCase):
