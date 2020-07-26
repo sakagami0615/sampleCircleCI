@@ -17,3 +17,7 @@ class MathTest(unittest.TestCase):
         for data in test_datas:
             actual = saturation(data['value'], data['high'], data['low'])
             self.assertEqual(actual, data['expect'])
+
+
+if __name__ == "__main__":
+    unittest.main()
